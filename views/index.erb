@@ -1,0 +1,36 @@
+<!-- GoogleMap -->
+<script type="text/javascript">
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 42.3583677, lng: -71.0676305},
+      zoom: 14,
+    });
+
+    /*map.addListener('click', function(e) {
+      var marker = new google.maps.Marker({
+        position: {lat: e.latLng.lat(), lng: e.latLng.lng()},
+        map: map
+      });
+    });*/
+
+    console.log("https://food-trucks.firebaseio.com/v3_0/<%= @weekday %>/<%= @meal %>");
+    var ref = new Firebase("https://food-trucks.firebaseio.com/v3_0/<%= @weekday %>/<%= @meal %>");
+
+    // Get the data on a post that has changed
+    ref.on("value", function(snapshot) {
+      console.log(snapshot.val);
+      var snapshotJson = snapshot.val();
+      for (var key in snapshotJson) {
+        var marker = new google.maps.Marker({
+          position: {lat: snapshotJson[key].latitude, lng: snapshotJson[key].longitude},
+          map: map,
+          icon: '<%= image_path 'marker.svg' %>'
+        });
+        marker.addListener('click', function() {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });
+      }
+    });
+  }
+</script>
