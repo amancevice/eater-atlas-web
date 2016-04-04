@@ -24,22 +24,8 @@ module EaterAtlas
 
 
     get '/' do
-      weekday = Time.now.strftime("%A")
-      meal    = "Lunch"
-
-      redirect "/#{weekday}/#{meal}"
-    end
-
-    get '/:weekday' do |weekday|
-      meal = "Lunch"
-
-      redirect "#{weekday}/#{meal}"
-    end
-
-    get '/:weekday/:meal' do |weekday, meal|
-      @weekday = weekday
-      @meal    = meal
-
+      @weekday = Time.now.strftime("%A")
+      @meal    = "Lunch"
       erb :index
     end
   end
