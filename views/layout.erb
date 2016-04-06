@@ -91,11 +91,13 @@
 
       <!-- Navigation Drawer -->
       <div class="ea-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="ea-drawer-header"></header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">place</i>Cities</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">today</i>Weekday</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">access_time</i>Meal</a>
+        <header class="ea-drawer-header">
+          <img src="<%= image_path 'burger.svg' %>" height="128"/>
+        </header>
+        <nav class="ea-navigation mdl-navigation">
+          <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">place</i>Cities</a>
+          <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">today</i>Weekday</a>
+          <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">access_time</i>Meal</a>
         </nav>
       </div>
     </div>

@@ -28,7 +28,12 @@ html, body {
   bottom: 19px;
 }
 .ea-layout .mdl-layout__header .mdl-layout__drawer-button {
-  color: rgba(0, 0, 0, 0.54);
+  background-color: #E64A19;
+  color: #FFDEA1;
+}
+.ea-layout .mdl-layout__header-row {
+  background-color: #E64A19;
+  color: #FFDEA1;
 }
 .mdl-layout__drawer .avatar {
   margin-bottom: 16px;
@@ -40,7 +45,7 @@ html, body {
 .ea-drawer .mdl-menu__container {
   z-index: -1;
 }
-.ea-drawer .demo-navigation {
+.ea-drawer .ea-navigation {
   z-index: -2;
 }
 /* END iOS Safari specific workaround */
@@ -65,13 +70,15 @@ html, body {
           justify-content: flex-end;
   padding: 16px;
   height: 151px;
+  background-color: #E54C10;
 }
-.demo-navigation {
+.ea-navigation {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  background-color: #FFDEA1;
 }
-.ea-layout .demo-navigation .mdl-navigation__link {
+.ea-layout .ea-navigation .mdl-navigation__link {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -81,17 +88,21 @@ html, body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  color: rgba(255, 255, 255, 0.56);
+  color: #E54C10;
   font-weight: 500;
+  font-size: 18px;
 }
-.ea-layout .demo-navigation .mdl-navigation__link:hover {
-  background-color: #00BCD4;
-  color: #37474F;
+.ea-layout .ea-navigation .mdl-navigation__link:hover {
+  background-color: #E54C10;
+  color: #FFDEA1;
 }
-.demo-navigation .mdl-navigation__link .material-icons {
+.ea-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.56);
+  color: #E54C10;
   margin-right: 32px;
+}
+.ea-navigation .mdl-navigation__link:hover .material-icons {
+  color: #FFDEA1;
 }
 #map {
   height: 100%;

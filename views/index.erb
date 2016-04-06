@@ -26,10 +26,15 @@
           map: map,
           icon: '<%= image_path 'marker.svg' %>'
         });
-        /*marker.addListener('click', function() {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-        });*/
+        marker.addListener('click', function() {
+          //map.setZoom(8);
+          //map.setCenter(marker.getPosition());
+          var xmarker = new google.maps.Marker({
+            position: marker.getPosition(),
+            map: map,
+            icon: '<%= image_path 'marker_orange.svg' %>'
+          });
+        });
       }
     });
   }
